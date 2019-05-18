@@ -145,7 +145,7 @@ func Echo() error {
 }
 
 func Curs_set(c int) error {
-	if C.curs_set(C.int(c)) != OK {
+	if C.curs_set(C.int(c)) == ERR {
 		return CursesError{"Curs_set failed"}
 	}
 	return nil
