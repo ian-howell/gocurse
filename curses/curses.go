@@ -112,11 +112,8 @@ func Start_color() error {
 	return nil
 }
 
-func Init_pair(pair int, fg int, bg int) error {
-	if C.init_pair(C.short(pair), C.short(fg), C.short(bg)) != OK {
-		return CursesError{"Init_pair failed"}
-	}
-	return nil
+func Init_pair(pair int, fg int, bg int) {
+	C.init_pair(C.short(pair), C.short(fg), C.short(bg))
 }
 
 func Color_pair(pair int) int32 {
