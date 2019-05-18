@@ -165,6 +165,20 @@ func Cbreak() error {
 	return nil
 }
 
+func Raw() error {
+	if C.raw() != OK {
+		return CursesError{"Raw failed"}
+	}
+	return nil
+}
+
+func Noraw() error {
+	if C.noraw() != OK {
+		return CursesError{"Noraw failed"}
+	}
+	return nil
+}
+
 func Endwin() error {
 	if C.endwin() != OK {
 		return CursesError{"Endwin failed"}
