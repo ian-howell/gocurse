@@ -1,6 +1,5 @@
 package curses
 
-// struct _win_st{};
 // struct ldat{};
 // #define _Bool int
 // #define NCURSES_OPAQUE 1
